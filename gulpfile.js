@@ -14,7 +14,7 @@ gulp.task("default",["html","sass"], function(){
         notify().write("Browser reloaded");
     } )
 
-    gulp.watch("src/*.html",["html"]);
+    gulp.watch(["src/*.html","src/**/*.html"],["html"]);
 
 
 });
