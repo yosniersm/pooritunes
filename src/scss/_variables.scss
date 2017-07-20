@@ -1,0 +1,32 @@
+// Font families
+$main-font-family: 'Zilla Slab', serif;
+$title-font-family: 'Bree Serif', serif;
+$body-font-family: $main-font-family;
+
+// Font sizes
+$font-size-base: 15px;
+$font-size-small: $font-size-base - 5px;
+$font-size-large: $font-size-base + 5px;
+$font-size-h1: $font-size-base + 15px;
+$font-size-h2: $font-size-base + 12px;
+$font-size-h3: $font-size-base + 9px;
+$font-size-h4: $font-size-base + 6px;
+$font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;
+
+// Base colors
+$color-amazing-39: #F8695B;
+$color-grastur: #17434E;
+$color-sidonia-orange: #FDAA10;
+$color-less-is-less: #EFF0EA;
+$color-silver: #DBDBDB;
+
+// Main components colors
+$main-text-color: $color-grastur;
+$link-color:$color-amazing-39;
+
+// Responsive
+$mobile-portrait-width:375px;
+$mobile-landscape-width:667px;
+$table-portrait-width: 768px;
+$table-landscape-width: 1024px;

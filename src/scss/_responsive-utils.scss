@@ -1,0 +1,45 @@
+@mixin if-mobile-landscape {
+  @media (min-width:#{$mobile-portrait-width} + 1) {
+    @content;
+  }
+}
+
+@mixin if-mobile-portrait {
+  @media (max-width:#{$mobile-portrait-width}) {
+    @content;
+  }
+}
+
+@mixin if-mobile {
+  @include if-mobile-landscape {
+    @content;
+  }
+  @media (max-width:#{$mobile-landscape-width}) {
+    @content;
+  }
+}
+
+
+@mixin if-table-portrait {
+  @media (min-width:#{$table-portrait-width}) {
+    @content;
+  }
+}
+
+@mixin if-table-landscape {
+  @media (min-width:#{$table-landscape-width}) {
+    @content;
+  }
+}
+
+@mixin if-table {
+  @include if-table-portrait {
+    @content;
+  }
+}
+
+@mixin if-desktop {
+  @include if-table-landscape() {
+    @content;
+  }
+}

@@ -1,0 +1,18 @@
+body{
+  background: $color-less-is-less;
+  font-family: $main-font-family;
+  font-size: $font-size-base;
+  color:$main-text-color;
+
+  @include if-mobile {
+    background: coral;
+  }
+
+  @include if-table-portrait {
+    background: gold;
+  }
+
+  @include if-table-landscape {
+    background: lightblue;
+  }
+}
