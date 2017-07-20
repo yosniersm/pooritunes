@@ -1,7 +1,7 @@
 .container {
     width: 100%;
-  @include if-destop {
-    margin:0 auto;
+  @include if-desktop {
+    margin:0 auto; // center the container
     width: 1024px;
   }
 }

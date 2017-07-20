@@ -11,7 +11,7 @@
 }
 
 @mixin if-mobile {
-  @include if-mobile-landscape {
+  @include if-mobile-portrait {
     @content;
   }
   @media (max-width:#{$mobile-landscape-width}) {

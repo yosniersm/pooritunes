@@ -1,5 +1,26 @@
 .songs-list {
   margin-top: 55px;
+
+  .ui-status { display: none; }
+  &.empty {
+      .ui-status.empty {display: block}
+  }
+  &.loading {
+      .ui-status.loading {display: block}
+  }
+  &.error {
+    .ui-status.error {display: block}
+  }
+  &.ideal {
+    .ui-status.ideal {display: block}
+  }
+
+  &.empty, &.loading, &.error {
+    font-size: $font-size-large;
+    text-align: center;
+    padding: 50px;
+  }
+
   .song {
     box-sizing: border-box;
     width: calc(50% - 10px);
