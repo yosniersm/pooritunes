@@ -25,4 +25,4 @@ songsService.list(songs => {
 }, error => {
     songsListUIManager.setError();
     console.error("Error loading the songs", error);
-})
+});
