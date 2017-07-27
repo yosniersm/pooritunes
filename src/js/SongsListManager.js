@@ -6,9 +6,10 @@ import PubSub from "pubsub-js";
 
 export default class SongsListManager {
 
-    constructor (songsService, uiManager) {
+    constructor (songsService, uiManager, pubSub) {
         this.songsService = songsService;
         this.uiManager = uiManager;
+        this.pubSub = pubSub;
     }
 
     init(){
