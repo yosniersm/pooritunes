@@ -2,6 +2,7 @@ window.$ = window.jquery = require("jquery");
 
 import SongsService from "./SongsService";
 import UIManager from "./UIManager";
+import PubSub from "pubsub-js";
 
 const songsService = new SongsService("/songs/");
 const songsListUIManager = new UIManager(".songs-list");
@@ -26,3 +27,4 @@ songsService.list(songs => {
     songsListUIManager.setError();
     console.error("Error loading the songs", error);
 });
+

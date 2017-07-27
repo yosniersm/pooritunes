@@ -1,7 +1,10 @@
 /**
  * Created by yos on 25/07/17.
  */
-import UIManager from "./UIManager"
+const $ = require("jquery");
+
+import UIManager from "./UIManager";
+import PubSub from "pubsub-js";
 
 export default class SongFormManager extends UIManager {
 
@@ -42,13 +45,14 @@ export default class SongFormManager extends UIManager {
     send(){
         this.setLoading();
         const song = {
-            artist: this.element.find("#artist").val,
-            title: this.element.find("#title").val,
-            cover_url: this.element.find("#cover_url").val
+            artist: this.element.find("#artist").val(),
+            title: this.element.find("#title").val(),
+            cover_url: this.element.find("#cover_url").val()
         };
         this.songsService.save(song, success =>{
             // TODO: RECARGAR EL LISTADO DE CANCIONES
-           this.resetForm();
+            PubSub.publish("new-song", song); // Publish the event when create  a new song
+            this.resetForm();
             this.setIdeal()
         }, error => {
             this.setErrorHtml("Se ha producido un error al guardar la cancion.");

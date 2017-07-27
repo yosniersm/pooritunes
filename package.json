@@ -30,6 +30,7 @@
     "postcss": "^6.0.8"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "pubsub-js": "^1.5.7"
   }
 }
