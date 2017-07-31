@@ -2,6 +2,8 @@ node_modules/
 
 .idea/
 
+
+# la carpeta dist no formar parte del repo
 dist/
 
 # Logs
@@ -63,5 +65,4 @@ typings/
 # dotenv environment variables file
 .env
 
-# la carpeta dist no formar parte del repo
-dist/
+db.json
