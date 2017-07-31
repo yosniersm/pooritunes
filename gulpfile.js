@@ -11,11 +11,13 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
+    imagemin = require('gulp-imagemin'),
+    responsive = require('gulp-responsive'),
     browserSync = require('browser-sync').create();
 
 // Default task
 gulp.task("default",["js","html","sass"], function(){
-    browserSync.init({server:"dist/", browser:"chrome"}); //Starting browsersync on the  src folder
+    browserSync.init({proxy:"http://127.0.0.1:3100/"}); //Starting browsersync on the  src folder
     gulp.watch(["src/scss/*.scss", "src/scss/**/*.scss"], ["sass"]); // execute the sass task
     gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
     gulp.watch("src/*.html", function(){
@@ -71,3 +73,17 @@ gulp.task("js", function() {
         .pipe(browserSync.stream())
         .pipe(notify("JS Compiled"))
 })
+
+// Resize and rename image task
+gulp.task("img", function(){
+    gulp.src("src/img/*")
+        .pipe(responsive({
+            "*.png":[
+                {width: 150, rename:{suffix:"-150px"}},
+                {width: 250, rename:{suffix:"-250px"}},
+                {width: 300, rename:{suffix:"-300px"}}
+            ]
+        }))
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img/"))
+});
