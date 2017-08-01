@@ -1,7 +1,9 @@
 .songs-list {
   margin-top: 55px;
 
-  .ui-status { display: none; }
+  .ui-status {
+      display: none;
+  }
   &.empty {
       .ui-status.empty {display: block}
   }
@@ -9,10 +11,10 @@
       .ui-status.loading {display: block}
   }
   &.error {
-    .ui-status.error {display: block}
+      .ui-status.error {display: block}
   }
   &.ideal {
-    .ui-status.ideal {display: block}
+      .ui-status.ideal {display: block}
   }
 
   &.empty, &.loading, &.error {
@@ -28,11 +30,14 @@
     background-color: $color-silver;
     padding: 15px;
     margin:10px 5px;
-    max-height: 250px;
     height: 250px;
+    max-height: 250px;
     overflow: hidden;
     @include if-mobile-landscape {
         width:calc(25% - 10px)
+    }
+    @include if-desktop {
+      width: calc(20% - 10px);
     }
     .cover{
       width: 100%;
@@ -40,10 +45,6 @@
     .artist {
       font-weight: bold;
       margin-top: 10px;
-      font-size: $font-size-large;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
     }
     .title{
       margin-top: 5px;

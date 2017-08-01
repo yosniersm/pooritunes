@@ -37,7 +37,7 @@ export default class SongsService {
 
     getDetail(songId, successCallback, errorCallback){
         $.ajax({
-            url: "${this.url}${song}",
+            url: `${this.url}${songId}`,
             success: successCallback,
             error: errorCallback
         })
@@ -45,7 +45,7 @@ export default class SongsService {
 
     update (song, successCallback, errorCallback){
         $.ajax({
-            url: "${this.url}${song.id}",
+            url: `${this.url}${song.id}`,
             method: "put",
             data: song,
             success: successCallback,
@@ -55,7 +55,7 @@ export default class SongsService {
 
     delete(songId, successCallback, errorCallback) {
         $.ajax({
-            url:"${this.url}${songId}",
+            url:`${this.url}${songId}`,
             method:"delete",
             success: successCallback,
             error:errorCallback

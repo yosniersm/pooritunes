@@ -34,7 +34,7 @@ export default class SongsListManager extends UIManager {
                 this.setIdeal();
             }
         }, error => {
-            this.uiManager.setError();
+            this.setError();
             console.log("Error while loading the songs", error);
         });
     }
@@ -54,7 +54,7 @@ export default class SongsListManager extends UIManager {
             cover_url = "img/disk-150px.png";
             srcset = "img/disk-150px.png 150w, img/disk-250px.png 250w, img/disk-300px.png 300w";
         }
-        return `<article class="song" data-id="{song.id}">
+        return `<article class="song" data-id="${song.id}">
                 <img src="${song.cover_url}" alt="${song.artist} - ${song.title}" class="cover"${srcset}>
                 <div class="artist">${song.artist}</div>
                 <div class="title">${song.title}</div>
