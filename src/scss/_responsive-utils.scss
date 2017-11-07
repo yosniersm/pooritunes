@@ -19,27 +19,26 @@
   }
 }
 
-
-@mixin if-table-portrait {
-  @media (min-width:#{$table-portrait-width}) {
+@mixin if-tablet-portrait {
+  @media (min-width:#{$tablet-portrait-width}) {
     @content;
   }
 }
 
-@mixin if-table-landscape {
-  @media (min-width:#{$table-landscape-width}) {
+@mixin if-tablet-landscape {
+  @media (min-width:#{$tablet-landscape-width}) {
     @content;
   }
 }
 
-@mixin if-table {
-  @include if-table-portrait {
+@mixin if-tablet {
+  @include if-tablet-portrait {
     @content;
   }
 }
 
 @mixin if-desktop {
-  @include if-table-landscape() {
+  @include if-tablet-landscape() {
     @content;
   }
 }

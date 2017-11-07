@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create(),
     notify = require("gulp-notify"),
     gulpImport = require("gulp-html-import"),
     browserify = require("browserify"),
@@ -12,12 +13,12 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     imagemin = require('gulp-imagemin'),
-    responsive = require('gulp-responsive'),
-    browserSync = require('browser-sync').create();
+    responsive = require('gulp-responsive');
+    
 
 // Default task
 gulp.task("default",["js","html","sass"], function(){
-    browserSync.init({proxy:"http://127.0.0.1:3100/"}); //Starting browsersync on the  src folder
+    browserSync.init({proxy:"http://127.0.0.1:3100/", browser:"google chrome"}); //Starting browsersync on the  src folder
     gulp.watch(["src/scss/*.scss", "src/scss/**/*.scss"], ["sass"]); // execute the sass task
     gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
     gulp.watch("src/*.html", function(){
